@@ -1,0 +1,148 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.comcast</groupId>
+  <artifactId>BulkSolve</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>BulkSolve</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+  </properties>
+  
+  <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.7.RELEASE</version>
+		<relativePath/> 
+	</parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+     <groupId>
+      org.springframework
+     </groupId>
+     <artifactId>spring-context</artifactId>
+     </dependency>
+     
+     <dependency>
+     <groupId>org.springframework</groupId>
+     <artifactId>spring-jdbc</artifactId>
+     <version>4.0.3.RELEASE</version>
+     </dependency>
+     
+     <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-web</artifactId>
+     </dependency>
+     <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+     
+     <dependency>
+     <groupId>com.oracle</groupId>
+     <artifactId>ojdbc7</artifactId>
+     <version>12.1.0.1</version>
+     <scope>compile</scope>
+     </dependency>
+     <dependency>
+     <groupId>org.json</groupId>
+     <artifactId>json</artifactId>
+     <version>20160212</version>
+     </dependency>
+     
+     <dependency>
+     <groupId>com.fasterxml.jackson.core</groupId>
+     <artifactId>jackson-databind</artifactId>
+     <version>2.5.0</version>
+     </dependency>
+     
+     <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-actuator</artifactId>
+     </dependency>
+     
+     <dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-thymeleaf</artifactId>
+     
+     </dependency>
+     <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>1.3.2</version>
+     </dependency>
+     <dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>mail</artifactId>
+    <version>1.4</version>
+    </dependency>
+    <dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-mail</artifactId>
+</dependency>
+ <dependency>
+    <groupId>com.googlecode.json-simple</groupId>
+    <artifactId>json-simple</artifactId>
+    <version>1.1</version>
+</dependency>
+<dependency>
+<groupId>com.github.ozlerhakan</groupId>
+    <artifactId>poiji</artifactId>
+    <version>1.11</version>
+    
+</dependency>
+ <dependency>
+    <groupId>com.oracle.spatial</groupId>
+    <artifactId>com.springsource.oracle.spatial.geometry</artifactId>
+    <version>10.2.0.1</version>
+</dependency>
+  <dependency>
+    <groupId>commons-lang</groupId>
+    <artifactId>commons-lang</artifactId>
+    <version>2.6</version>
+ </dependency>
+  </dependencies>
+  
+  <build>
+  
+  <plugins>
+  <plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+  </plugin>
+  </plugins>
+  </build>
+  <repositories>
+  <repository>
+  <id>spring-releases</id>
+  <url>https://repo.spring.io/libs-release</url>
+  </repository>
+  <repository>
+    <id>osgeo</id>
+    <name>Geotools repository</name>
+    <url>http://download.osgeo.org/webdav/geotools</url>
+ </repository>
+  </repositories>
+  <pluginRepositories>
+  <pluginRepository>
+   <id>spring-releases</id>
+   <url>https://repo.spring.io/libs-release</url>
+  </pluginRepository>
+  </pluginRepositories>
+</project>
