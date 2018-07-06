@@ -29,6 +29,7 @@ public class RoutesSolveService {
 	public boolean checkResponse(String output){
 		Pattern patern = Pattern.compile("appliedCostMatrix");
 		Matcher matcher = patern.matcher(output);
+		System.out.println("Hi i am inside the class");
 		System.out.println("response length is:" + output.length() + output);
 		if(matcher.find()){
 			
