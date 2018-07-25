@@ -1,0 +1,6 @@
+com\scope\demo\UtilityService\Utils\EmailClient.class
+com\scope\demo\UtilityService\Service\PDFGeneratorService.class
+com\scope\demo\UtilityService\Controller\AppController.class
+Configurations\ThymeleafConfiguration.class
+com\scope\demo\UtilityService\App.class
+com\scope\demo\UtilityService\Utils\PdfGenerator.class

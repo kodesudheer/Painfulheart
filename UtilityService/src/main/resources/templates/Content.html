@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<h3>Your New Quote for selected term:</h3>
+</head>
+<body>
+    <h1 style="font-size:25px;text-align:center">Your quote for selected term</h1>
+    <h3>Name:</h3><p th:text="${name}"></p>
+    <h3>Address:</h3><p th:text="${address}"></p>
+    <h3>PhoneNumber:</h3><p th:text="${phone}"></p>
+    <br/><br/>
+    <p th:text="'Hello, ' + ${name} + '!'+'your last month usage was  ' + ${last_month_usage} + ' KW and your last month bill amount was  $ ' + ${last_month_amount} " />
+    <br/>
+    <b><p th:text ="'Your new quote is ' + ${quote}+ ' cents for your selected term ' + ${requested_term} + ' months'"/></b>
+    <br/>
+    <p>Below are different quotes:</p>
+    <br/>
+    <table>
+    <tr>
+    <th>Months</th>
+    <th>Quote</th>
+    </tr>
+    <tr>
+     <td>6</td>
+     <td>20 cents</td>
+    </tr>
+    <tr>
+     <td>12</td>
+     <td>18 cents</td>
+    </tr>
+    <tr>
+     <td>24</td>
+     <td>15 cents</td>
+    </tr>
+    <tr>
+     <td>36</td>
+     <td>12 cents</td>
+    </tr>
+    </table>
+</body>
+</html>
