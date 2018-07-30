@@ -14,6 +14,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
@@ -26,6 +27,10 @@ public class EmailClient {
 	
 	@Autowired
 	private PdfGenerator pdfGenerator;
+	
+	@Autowired
+	private Environment environment;
+
 	
 	File file = null;;
 	public void sendMail(String subject, String body, String to) throws IOException, MessagingException{
@@ -40,6 +45,7 @@ public class EmailClient {
 		MimeMessage message = sender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message,true);
 		helper.setTo(to);
+		helper.setFrom("");
 		helper.setText(body);
 		helper.setSubject(subject);
 		helper.addAttachment("Your Receipt.pdf",file);
@@ -51,11 +57,13 @@ public class EmailClient {
 	
 	public void sendEMail(File file,String email) throws IOException, MessagingException{
 		
+		System.out.println("From field is:" +environment.getProperty("email.from"));
 		String subject = "Your new Quote for Your usage term";
 		String body = "Based upon your selected term of usage attached pdf has your Quote";
 		MimeMessage message = sender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message,true);
 		helper.setTo(email);
+		helper.setFrom(environment.getProperty("email.from"));
 		helper.setText(body);
 		helper.setSubject(subject);
 		helper.addAttachment("YourQuote.pdf",file);
