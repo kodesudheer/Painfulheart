@@ -1,0 +1,84 @@
+<div class="container col-xs-60" align="left">
+
+  <div class="app-loading submitclr"  *ngIf="this.loader">
+    Submitting.......
+  </div>
+<div class="col-xs-20 col-sm-4" align="left">
+  <div class="success"*ngIf="this.sucess_submit">
+    Your request submitted sucessfully!! You will get email with attached PDF with your Quote.
+  </div>
+  <div class="failure" *ngIf="this.failure_submit">
+    Failure submitting your request, Contact admin for further help.
+  </div>
+<br/><br/>
+  <label>Name</label><input id="name" name="name" type="text" class="form-control" required minlength="3" maxlength="20" [(ngModel)]="NameValue" (input)="inputed($event)" />
+  <div class="failure" *ngIf="this.uname_req">
+    Name is required.
+  </div>
+  <br/>
+  <label>Address</label><input id="address" name="address" type="text" class="form-control" [(ngModel)]="AddressValue"/>
+
+  <br/>
+  <label>Phone</label><input id="phone" name="phone" type="text" maxlength="10" minlength="10"  class="form-control" (keypress)="numberOnly($event)" #phone="ngModel" required [(ngModel)]="PhoneValue" (input)="inputed($event)"/>
+  <div  class="failure" *ngIf="this.phone_req">
+    Phone number is required.
+  </div>
+  <div class="failure" [hidden]="phone.valid||phone.untouched">
+  <div *ngIf="phone.errors?.minlength">
+   Phone number must be atleast 10 digits
+  </div>
+  </div>
+  <br/>
+  <label>Email</label><input id="email" name="email" type="email" class="form-control"  required #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [(ngModel)]="EmailValue" [email]="true" (input)="inputed($event)"/>
+
+  <div class="failure" [hidden]="email.valid||email.untouched">
+    <!--<div  *ngIf="email.errors && email.errors.required">
+      Email is necessary
+    </div>-->
+    <div *ngIf="email.errors && email.errors.pattern">
+      Email is invalid
+    </div>
+    <div class="failure" *ngIf="this.email_req" >
+      Email is required
+    </div>
+
+  </div>
+  <br/>
+  <label>Your Last Month Electric Usage</label>  (inKW)<input id="luse" name="luse" type="text" class="form-control" (keypress)="numberOnly($event)" required [(ngModel)]="LastuseValue" (input)="inputed($event)" />
+  <div class="failure" *ngIf="this.luse_req">
+    Your Last Month Electric Usage is required.
+  </div>
+  <br/>
+  <label>Amount Of Last Month Bill </label> ($)<input id="amt" name="amt" type="text" class="form-control"   required #amt="ngModel" pattern="^\d{1,4}(\.\d{0,2})?$" [(ngModel)]="AmountValue" (input)="inputed($event)"/>
+  <div class="failure" *ngIf="this.amt_req">
+    LatMonthAmount is required.
+  </div>
+  <div class="failure" *ngIf="amt.errors && amt.errors.pattern">
+    Dollar amt is invalid
+  </div>
+  <br/>
+  <div class="form-group">
+  <label>Term For Quote (months):</label>
+    <fieldset>
+    <label for="quote6">6 (M)</label>
+      <input type="checkbox" name="Quote6checked" [checked]="Quote6checked" [(ngModel)]="Quote6checked"  value="6" (change)="click6()"/>
+
+      <label for="quote12">12 (M)</label>
+      <input type="checkbox" name="Quote12checked" [checked]="Quote12checked" [(ngModel)]="Quote12checked" value="12" (change)="click12()"/>
+
+      <label for="quote24">24 (M)</label>
+      <input type="checkbox" name="Quote24checked" [checked]="Quote24checked" [(ngModel)]="Quote24checked" value="24" (change)="click24()"/>
+
+      <label for="quote36">36 (M)</label>
+      <input type="checkbox" name="Quote36checked" [checked]="Quote36checked" [(ngModel)]="Quote36checked" value="36" (change)="click36()"/>
+    </fieldset>
+  </div>
+  <div class="failure" *ngIf="this.quote_req">
+    Quote selection is required.
+  </div>
+  <br/><br/>
+<button class="btn btn-primary col-sm-8" (click)="submitForm()">Submit</button>
+
+
+</div>
+</div>
