@@ -1,41 +1,61 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<h3>Your New Quote for selected term:</h3>
+<h3>Utility Quote Request:</h3>
 </head>
 <body>
-    <h1 style="font-size:25px;text-align:center">Your quote for selected term</h1>
-    <h3>Name:</h3><p th:text="${name}"></p>
+    <h1 style="font-size:25px;text-align:center;color:blue">Utility Quote Request</h1>
+    <hr></hr>
+    <br/><br/>
+    <b th:text="${date}"></b><br/>
+    <p>Congrats, you are approved!</p><br/><br/>
+    <p><b th:text="'Dear ' +${name}"> </b></p>
+    <br/><br/>
+    <p th:text="'Based on your last month usage was ' +${last_month_usage}+' KW and your last month bill amount of $ ' +${last_month_amount}+' your new quote is ' + ${quote}+' cents per KW for your  selected term of '+${requested_term}+' months.'"></p>
+    <br/>
+    <p th:text="'we have your address as : ' "></p><b th:text="${address}"></b>
+    
+    
+   <!--  <h3>Name:</h3><p th:text="${name}"></p>
     <h3>Address:</h3><p th:text="${address}"></p>
     <h3>PhoneNumber:</h3><p th:text="${phone}"></p>
     <br/><br/>
     <p th:text="'Hello, ' + ${name} + '!'+'your last month usage was  ' + ${last_month_usage} + ' KW and your last month bill amount was  $ ' + ${last_month_amount} " />
     <br/>
-    <b><p th:text ="'Your new quote is ' + ${quote}+ ' cents for your selected term ' + ${requested_term} + ' months'"/></b>
+    <b><p th:text ="'Your new quote is ' + ${quote}+ ' cents for your selected term ' + ${requested_term} + ' months'"/></b> -->
     <br/>
-    <p>Below are different quotes:</p>
+    <p>You are also eligible for below different quotes:</p>
     <br/>
-    <table>
+    <table border="1">
+    
     <tr>
-    <th>Months</th>
-    <th>Quote</th>
+    <th style="border-left:none;border-top:none">Term</th>
+    <th style="border-right:none;border-left:none;border-top:none">Quote/KW</th>
     </tr>
     <tr>
-     <td>6</td>
-     <td>20 cents</td>
+     <td style="border-left:none;border-bottom:none;border-top:none">06 months</td>
+     <td style="border-right:none;border-left:none;border-bottom:none;border-top:none">20 cents</td>
     </tr>
     <tr>
-     <td>12</td>
-     <td>18 cents</td>
+     <td style="border-left:none;border-bottom:none;border-top:none">12 months</td>
+     <td style="border-right:none;border-left:none;border-bottom:none;border-top:none">18 cents</td>
     </tr>
     <tr>
-     <td>24</td>
-     <td>15 cents</td>
+     <td style="border-left:none;border-bottom:none;border-top:none">24 months</td>
+     <td style="border-right:none;border-left:none;border-bottom:none;border-top:none">15 cents</td>
     </tr>
     <tr>
-     <td>36</td>
-     <td>12 cents</td>
+     <td style="border-left:none;border-bottom:none;border-top:none">36 months</td>
+     <td style="border-right:none;border-left:none;border-bottom:none;border-top:none">12 cents</td>
     </tr>
+    
     </table>
+    <br/><br/>
+    <p>We really look forward doing business with you.Please call at<b>1-888-UTILITY</b> or email us <b style="color:blue">sales@utility.com</b> to schedule the install or if you have any questions.</p>
+    <br/><br/>
+    <span style="align:left"><b>Sincerely,</b></span><br/>
+    <span style="align:left"><b>John Doe</b></span><br/>
+    <span style="align:left">Sales Representative</span><br/>
+    <span style="align:left">Utility Systems.</span>
 </body>
 </html>

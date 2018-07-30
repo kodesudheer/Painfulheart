@@ -42,7 +42,7 @@ public class EmailClient {
 		helper.setTo(to);
 		helper.setText(body);
 		helper.setSubject(subject);
-		helper.addAttachment("Your Receipt",file);
+		helper.addAttachment("Your Receipt.pdf",file);
 		sender.send(message);
 		
 		}
@@ -58,7 +58,7 @@ public class EmailClient {
 		helper.setTo(email);
 		helper.setText(body);
 		helper.setSubject(subject);
-		helper.addAttachment("Your Quote PDF",file);
+		helper.addAttachment("YourQuote.pdf",file);
 		sender.send(message);
 		
 		}
