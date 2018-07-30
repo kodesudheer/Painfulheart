@@ -1,0 +1,24 @@
+.currencyinput {
+  border: 1px inset #ccc;
+
+}
+.currencyinput input {
+  border: 1;
+}
+.success{
+  color: green;
+}
+.failure{
+  color: red;
+}
+.app-loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.submitclr{
+  color:green;
+}
