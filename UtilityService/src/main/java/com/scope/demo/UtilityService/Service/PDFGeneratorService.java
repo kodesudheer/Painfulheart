@@ -2,6 +2,8 @@ package com.scope.demo.UtilityService.Service;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,13 +24,15 @@ public class PDFGeneratorService {
 	@Autowired
 	private EmailClient emailGenerator;
 	
-	private File generatedPDFFile= null;
+	private File generatedPDFFile= new File("Quote.pdf");
 	
 	public void pdfGenerate(String name,String address,String phone,String email,String last_month_usage,String last_month_amount,String requested_term){
 		
 		String quote ="";
 		Map<String,String> data = new HashMap<String,String>();
-		
+		SimpleDateFormat  simpleDate = new SimpleDateFormat("MM/dd/yyyy"); 
+		Date date = new Date();
+		data.put("date",simpleDate.format(date));
 		data.put("name",name);
 		data.put("address",address);
 		data.put("phone", phone);
@@ -53,6 +57,7 @@ public class PDFGeneratorService {
 		System.out.println("Quote is:" + quote);
 		try {
 			generatedPDFFile= pdfGenerator.createPdf("Content", data);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
