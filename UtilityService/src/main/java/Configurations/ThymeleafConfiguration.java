@@ -17,5 +17,6 @@ public class ThymeleafConfiguration {
 	    emailTemplateResolver.setCharacterEncoding("UTF-8");
 	    emailTemplateResolver.setOrder(1);
 	    return emailTemplateResolver;
+		 System.out.println("Just for push test");
 	  }
 }
